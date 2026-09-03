@@ -1,0 +1,35 @@
+.sticky-cta {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .sticky-cta {
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 190;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 16px rgba(16, 24, 40, 0.06);
+  }
+
+  .sticky-cta a {
+    flex: 1;
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  /* Keep the WhatsApp bubble clear of the sticky bar on small screens. */
+  .whatsapp-fab {
+    bottom: 78px;
+  }
+
+  body {
+    padding-bottom: 66px;
+  }
+}

@@ -1,0 +1,10 @@
+.cohub__card h3 {
+  font-size: 15.5px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.cohub__card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}

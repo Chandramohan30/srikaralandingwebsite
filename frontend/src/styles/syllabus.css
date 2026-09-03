@@ -1,0 +1,180 @@
+.syllabus {
+  background: var(--bg-raised);
+}
+
+.syllabus__panel {
+  background: var(--bg-raised);
+  border-radius: var(--radius-lg);
+  padding: 56px clamp(20px, 4vw, 56px) 64px;
+}
+
+.syllabus__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+  margin-bottom: 40px;
+}
+
+.syllabus__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.syllabus__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
+}
+
+.syllabus__item--open {
+  border-color: var(--saffron);
+}
+
+.syllabus__item-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--sans);
+}
+
+.syllabus__item-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.syllabus__item-chevron {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--text);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.syllabus__item--open .syllabus__item-chevron {
+  background: var(--saffron-deep);
+  transform: rotate(180deg);
+}
+
+.syllabus__item-body {
+  padding: 0 22px 22px;
+}
+
+.syllabus__item-body p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.syllabus__item-body ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.syllabus__item-body li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 16px;
+  position: relative;
+}
+
+.syllabus__item-body li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--saffron-deep);
+}
+
+.syllabus__combos {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.syllabus__combos h3 {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.syllabus__combos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.syllabus__combo {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--surface);
+}
+
+.syllabus__combo span {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.syllabus__combo strong {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--saffron-deep);
+}
+
+.syllabus__download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 15px 32px;
+  border: none;
+  border-radius: 999px;
+  background: var(--saffron-deep);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(194, 84, 12, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.syllabus__download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(194, 84, 12, 0.34);
+}
+
+@media (max-width: 720px) {
+  .syllabus__columns {
+    grid-template-columns: 1fr;
+  }
+  .syllabus__item-body ul {
+    grid-template-columns: 1fr;
+  }
+  .syllabus__combos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .syllabus__panel {
+    padding: 40px 18px 48px;
+  }
+}

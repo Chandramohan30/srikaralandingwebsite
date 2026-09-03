@@ -1,0 +1,52 @@
+.why-track__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 28px;
+}
+
+.why-track__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.why-track__icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent, var(--saffron-deep)) 12%, white);
+  color: var(--accent, var(--saffron-deep));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-track__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.why-track__title {
+  font-size: 16.5px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.why-track__detail {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .why-track__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .why-track__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,344 @@
+@import "./navbar.css";
+@import "./promo-bar.css";
+@import "./hero.css";
+@import "./program-highlights.css";
+@import "./tools-covered.css";
+@import "./trainers.css";
+@import "./certification.css";
+@import "./syllabus.css";
+@import "./course-banner.css";
+@import "./projects.css";
+@import "./offline.css";
+@import "./ai-track.css";
+@import "./compare.css";
+@import "./cohub.css";
+@import "./success-stories.css";
+@import "./careers.css";
+@import "./faq.css";
+@import "./demo.css";
+@import "./syllabus-modal.css";
+@import "./footer.css";
+@import "./whatsapp.css";
+@import "./sticky-cta.css";
+
+/* ---------------------------------------------------------
+   Srikara Academy — design tokens (light theme)
+   White/cream classroom backdrop with the same serif headline
+   as the brochure covers, and three accent lanes that map to
+   the two tracks:
+     cyan   -> IGNITE / frontend
+     violet -> ASCEND / full stack
+     amber  -> offers, CTAs, "limited seats" urgency
+   Accent hues are darkened slightly from the dark-theme version
+   so they still meet contrast on a white page.
+--------------------------------------------------------- */
+:root {
+  --bg: #ffffff;
+  --bg-raised: #fff8f2;
+  --surface: #ffffff;
+  --surface-2: #fef4ea;
+  --border: rgba(28, 20, 12, 0.09);
+  --border-strong: rgba(28, 20, 12, 0.16);
+
+  --text: #201810;
+  --text-muted: #5c5148;
+  --text-faint: #948a80;
+
+  /* Saffron — the single accent hue of this palette. --saffron is the bright,
+     decorative tone (badges, underlines, tints); --saffron-deep is the same
+     hue darkened for AA-safe text, buttons and icons on white. The old
+     --cyan/--violet/--green names are kept so components don't need touching,
+     but all now resolve to saffron-family tones so the page reads as one
+     considered accent rather than a multi-color kit. */
+  --saffron: #ff9933;
+  --saffron-deep: #c2540c;
+  --saffron-dim: rgba(255, 153, 51, 0.14);
+
+  --cyan: var(--saffron-deep);
+  --cyan-dim: rgba(194, 84, 12, 0.09);
+  --violet: #7a4419;
+  --violet-dim: rgba(122, 68, 25, 0.08);
+  --amber: var(--saffron-deep);
+  --amber-dim: var(--saffron-dim);
+  --green: #92400e;
+
+  --serif: "Fraunces", "Iowan Old Style", "Georgia", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
+}
+
+.section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--saffron-deep);
+  border-left: 3px solid var(--saffron);
+  padding-left: 12px;
+  margin-bottom: 14px;
+}
+
+.eyebrow.violet {
+  color: var(--violet);
+  border-left-color: var(--violet);
+}
+.eyebrow.amber {
+  color: var(--saffron-deep);
+  border-left-color: var(--saffron);
+}
+
+.section-head h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.section-head p {
+  color: var(--text-muted);
+  font-size: 17px;
+  max-width: 54ch;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head.center .eyebrow,
+.center .eyebrow {
+  border-left: none;
+  padding-left: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--saffron);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--saffron-deep);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #a4460a;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--saffron-deep);
+  color: var(--saffron-deep);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.04);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--accent, var(--cyan));
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--accent, var(--cyan));
+  color: var(--accent, var(--cyan));
+}
+
+/* Utility grids */
+.grid {
+  display: grid;
+  gap: 22px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 900px) {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding: 64px 0;
+  }
+}
+
+/* Scroll reveal (single, restrained) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: reveal-in 0.6s ease forwards;
+}
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}

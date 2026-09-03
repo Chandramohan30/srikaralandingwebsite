@@ -1,0 +1,41 @@
+.promo-bar {
+  background: var(--saffron-deep);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 9px clamp(16px, 4vw, 40px);
+  text-align: center;
+  position: relative;
+}
+
+.promo-bar strong {
+  font-weight: 800;
+}
+
+.promo-bar button {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0.85;
+  padding: 4px;
+}
+
+.promo-bar button:hover {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .promo-bar span {
+    font-size: 12.5px;
+  }
+}

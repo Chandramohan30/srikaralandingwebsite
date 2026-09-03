@@ -1,0 +1,252 @@
+.success-stories {
+  background: var(--bg-raised);
+}
+
+.success-stories__accent {
+  color: var(--amber);
+}
+
+/* ---------------------------------------------------------------
+   Career-transformation timeline cards (Before Srikara / At Srikara / Now)
+   shown in a GUVI-style horizontally scrolling carousel with arrow controls.
+------------------------------------------------------------------ */
+.story-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.story-scroller {
+  flex: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 6px 0 16px;
+  scrollbar-width: none;
+}
+
+.story-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.story-scroller:focus-visible {
+  outline: 2px solid var(--saffron-deep);
+  outline-offset: 4px;
+}
+
+.story-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+}
+
+.story-card {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 300px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(16, 24, 40, 0.1);
+}
+
+.story-card__top {
+  padding: 28px 24px 22px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.story-card__avatar {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--saffron-dim);
+  color: var(--saffron-deep);
+  border: 2px solid var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.story-card__name {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.story-card__timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.story-card__timeline li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+}
+
+.story-card__timeline li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 1px;
+  height: calc(100% - 8px);
+  border-left: 2px dashed var(--border-strong);
+}
+
+.story-card__icon {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  z-index: 1;
+}
+
+.story-card__icon--course {
+  background: var(--saffron-dim);
+  color: var(--saffron-deep);
+  border-color: rgba(255, 153, 51, 0.4);
+}
+
+.story-card__icon--now {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+  font-size: 10px;
+}
+
+.story-card__timeline div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 3px;
+}
+
+.story-card__label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.story-card__timeline strong {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.story-card__bottom {
+  margin-top: auto;
+  padding: 18px 24px 22px;
+  text-align: center;
+}
+
+.story-card__company {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.story-card__ctc {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg-raised);
+}
+
+.story-card__ctc strong {
+  color: #d92d20;
+  font-weight: 800;
+}
+
+.story-arrow {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+  transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+.story-arrow:hover:not(:disabled) {
+  background: var(--saffron-deep);
+  color: #fff;
+  border-color: var(--saffron-deep);
+}
+
+.story-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .story-carousel {
+    gap: 6px;
+  }
+  .story-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  .story-card {
+    width: 258px;
+  }
+}
+
+/* Google review screenshots strip, kept below the story cards */
+.success-stories__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.success-stories__gallery img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}

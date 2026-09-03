@@ -1,0 +1,107 @@
+.tools-covered__scroller {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border-radius: var(--radius-lg);
+}
+
+.tools-covered__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.tools-covered__page {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 6px 2px 12px;
+}
+
+.tools-covered__tile {
+  flex: 0 0 auto;
+  width: 108px;
+  height: 108px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tools-covered__tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--saffron);
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.08);
+}
+
+.tools-covered__tile img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.tools-covered__fallback {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--saffron-dim);
+  color: var(--saffron-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.tools-covered__tile span:last-child {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 4px;
+}
+
+/* Dotted pagination, GUVI-style */
+.tools-covered__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tools-covered__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border-strong);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tools-covered__dot:hover {
+  background: var(--saffron);
+}
+
+.tools-covered__dot--active {
+  background: #16a34a;
+  transform: scale(1.25);
+}
+
+@media (max-width: 640px) {
+  .tools-covered__tile {
+    width: 92px;
+    height: 92px;
+  }
+}

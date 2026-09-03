@@ -1,0 +1,130 @@
+.demo {
+  background:
+    radial-gradient(600px 300px at 15% 0%, rgba(217, 119, 6, 0.07), transparent 60%),
+    var(--bg-raised);
+}
+
+.demo__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.demo__copy h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 14px 0 16px;
+  color: var(--text);
+}
+
+.demo__copy p {
+  color: var(--text-muted);
+  font-size: 16px;
+  max-width: 48ch;
+  margin-bottom: 28px;
+}
+
+.demo__phone {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  width: fit-content;
+}
+
+.demo__phone span {
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.demo__phone a {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.demo__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo__form h3 {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.demo__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.demo__form input,
+.demo__form select,
+.demo__form textarea {
+  font-family: var(--sans);
+  font-size: 14.5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+  color: var(--text);
+  font-weight: 400;
+  resize: vertical;
+}
+
+.demo__form input::placeholder,
+.demo__form textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.demo__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.demo__status {
+  font-size: 13.5px;
+  text-align: center;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+}
+
+.demo__status--success {
+  background: rgba(5, 150, 105, 0.1);
+  color: var(--green);
+}
+
+.demo__status--error {
+  background: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+}
+
+.demo__form--compact {
+  gap: 12px;
+  padding: 24px;
+}
+
+.demo__form--compact .demo__form-row {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 900px) {
+  .demo__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .demo__form-row {
+    grid-template-columns: 1fr;
+  }
+}

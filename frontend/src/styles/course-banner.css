@@ -1,0 +1,164 @@
+.course-banner {
+  background: radial-gradient(120% 160% at 12% 20%, #26170a 0%, #150d06 55%, #0d0904 100%);
+  padding: 88px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 153, 51, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.course-banner__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.course-banner__copy h2 {
+  color: #fff;
+  font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.2;
+  max-width: 22ch;
+  margin-bottom: 32px;
+}
+
+.course-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.course-banner__enroll {
+  background: var(--saffron);
+  color: #201810;
+}
+
+.course-banner__enroll:hover {
+  background: #ffb057;
+}
+
+.course-banner__callback {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.course-banner__callback:hover {
+  border-color: #fff;
+}
+
+.course-banner__art {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.course-banner__laptop {
+  width: min(360px, 100%);
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+}
+
+.course-banner__cup {
+  position: absolute;
+  left: 4%;
+  bottom: 6%;
+  width: 26px;
+  height: 34px;
+  background: linear-gradient(180deg, #f4f4f4, #d8d8d8);
+  border-radius: 4px 4px 8px 8px;
+}
+
+.course-banner__steam {
+  position: absolute;
+  left: 10px;
+  bottom: 34px;
+  width: 3px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  filter: blur(1.5px);
+}
+
+.course-banner__tag {
+  position: absolute;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 153, 51, 0.12);
+  border: 1px solid rgba(255, 153, 51, 0.4);
+  color: var(--saffron);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  animation: banner-float 5s ease-in-out infinite;
+}
+
+.course-banner__tag--css {
+  top: 4%;
+  left: 6%;
+  animation-delay: 0s;
+}
+.course-banner__tag--html {
+  top: 18%;
+  left: 42%;
+  animation-delay: 0.6s;
+}
+.course-banner__tag--js {
+  top: 2%;
+  right: 4%;
+  animation-delay: 1.1s;
+}
+.course-banner__tag--react {
+  top: 34%;
+  right: 20%;
+  animation-delay: 1.6s;
+}
+.course-banner__tag--code {
+  top: 46%;
+  right: 0%;
+  animation-delay: 2.1s;
+}
+
+@keyframes banner-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 900px) {
+  .course-banner__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .course-banner__copy h2 {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .course-banner__actions {
+    justify-content: center;
+  }
+  .course-banner__art {
+    min-height: 200px;
+    margin-top: 24px;
+  }
+  .course-banner__tag {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-banner__tag {
+    animation: none;
+  }
+}
