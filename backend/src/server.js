@@ -3,7 +3,14 @@ const mongoose = require("mongoose");
 const app = require("./app");
 
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = "mongodb+srv://chankannan30_db_user:chan30%40dec@cluster0.ax74v02.mongodb.net/srikara?appName=Cluster0"
+const MONGODB_URI = process.env.MONGODB_URI;
+const cors = require("cors");
+
+app.use (cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 
 if (!MONGODB_URI) {
   console.error("MONGODB_URI is not set. Copy .env.example to .env and add your Atlas connection string.");
