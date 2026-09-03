@@ -9,7 +9,7 @@ export default function CourseHero() {
       <section id="top" className="hero">
         <div className="container hero__inner">
           <div className="hero__copy reveal">
-            <span className="hero__badge">🔥 {COURSE.badge}</span>
+            <span className="hero__badge"> {COURSE.badge}</span>
 
             <h1 className="hero__title">{COURSE.name}</h1>
             <p className="hero__subtitle">{COURSE.tagline}</p>
